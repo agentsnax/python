@@ -1,0 +1,42 @@
+import array
+
+# Creating Arrays
+arr = array.array('i', [1, 2, 3, 4, 5])   # 'i' indicates an integer array
+print("Original Array:", arr)
+
+# Accessing Elements
+print("First element:", arr[0])
+print("Last element:", arr[-1])
+
+arr.append(6)  
+print("After appending 6:", arr)
+
+arr.extend([7, 8, 9]) 
+print("After extending with [7, 8, 9]:", arr)
+
+arr.insert(2, 99)  # Inserts 99 at index 2
+print("After inserting 99 at index 2:", arr)
+
+# Removing Elements
+arr.remove(99)  
+print("After removing 99:", arr)
+
+removed_element = arr.pop()  # Removes and returns the last element
+print("After popping the last element:", arr)
+print("Popped element:", removed_element)
+
+#Slicing Arrays
+print("Slice (index 1 to 4):", arr[1:5])
+
+# Searching for an Element
+index = arr.index(4)  # Finds the index of the first occurrence of 4
+print("Index of element 4:", index)
+
+
+# Reversing an Array
+arr.reverse()
+print("Reversed Array:", arr)
+
+# Sorting an Array 
+sorted_arr = sorted(arr)
+print("Sorted Array:", sorted_arr)

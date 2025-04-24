@@ -1,0 +1,17 @@
+#Built-in-Functions
+
+numbers = 12, 1, 26, 13, 30
+text = "Hello ! Welcome to the snax world"
+print("Numbers are :", numbers)
+print("Text is :", text)
+print(" Sum of numbers:", sum(numbers))           
+print(" Maximum number:", max(numbers))           
+print(" Minimum number:", min(numbers))           
+print(" Sorted list:", sorted(numbers))
+print(" Sorted list in ascending order is :", sorted(numbers, reverse = True))
+print(" Absolute value of -15:", abs(-15))        
+print(" All elements > 0:", all(n > 0 for n in numbers))  
+print(" Any element > 40:", any(n > 40 for n in numbers)) 
+print(" Data type of text:", type(text))         
+print(" Convert to uppercase:", text.upper())    
+print(" Convert to lowercase:", text.lower())    

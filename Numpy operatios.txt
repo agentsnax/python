@@ -1,0 +1,37 @@
+#Numpy operatios
+import numpy as np
+
+# Create NumPy arrays
+arr1 = np.array([10, 23, 35, 14, 15])
+arr2 = np.array([17, 14, 31, 10, 11])
+print("array1", arr1, " ", type(arr1))
+print("array2", arr2,  " ", type(arr2))
+
+addition = arr1 + arr2
+print("Addition:", addition)
+
+subtraction = arr1 - arr2
+print("Subtraction:", subtraction)
+
+multiplication = arr1 * arr2
+print("Multiplication:", multiplication)
+
+division = arr1 / arr2
+print("Division:", division)
+
+sum_elements = np.sum(arr1)
+print("Sum of elements in array1:", sum_elements)
+
+min_value = np.min(arr1)
+max_value = np.max(arr1)
+print("Minimum value is:", min_value)
+print("Maximum value is:", max_value)
+
+cumulative_sum = np.cumsum(arr1)
+print("Cumulative sum of array1:", cumulative_sum)
+
+sorted_array = np.sort(arr2)
+print("Sorted array2:", sorted_array)
+
+concat = np.concatenate((arr1, arr2))
+print("Concatenated arrays:", concat)

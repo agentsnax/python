@@ -1,0 +1,51 @@
+import mysql.connector
+
+# Connect to MySQL database
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="testdb"
+)
+cursor = conn.cursor()
+
+# Create Table
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(255) NOT NULL,
+                    age INT NOT NULL)''')
+conn.commit()
+
+# Insert Data
+def insert_user(name, age):
+    cursor.execute("INSERT INTO users (name, age) VALUES (%s, %s)", (name, age))
+    conn.commit()
+
+# Read Data
+def fetch_users():
+    cursor.execute("SELECT * FROM users")
+    return cursor.fetchall()
+
+# Update Data
+def update_user(user_id, new_name, new_age):
+    cursor.execute("UPDATE users SET name = %s, age = %s WHERE id = %s", (new_name, new_age, user_id))
+    conn.commit()
+
+# Delete Data
+def delete_user(user_id):
+    cursor.execute("DELETE FROM users WHERE id = %s", (user_id,))
+    conn.commit()
+
+# Test CRUD operations
+insert_user("Alice", 25)
+insert_user("Bob", 30)
+print("Users after insertion:", fetch_users())
+
+update_user(1, "Alice Cooper", 26)
+print("Users after update:", fetch_users())
+
+delete_user(2)
+print("Users after deletion:", fetch_users())
+
+# Close connection
+conn.close()

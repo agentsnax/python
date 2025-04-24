@@ -1,0 +1,43 @@
+string1 = "Hello Snax."
+string2 = " I am here."
+string3 = "   AgentLegend   "
+
+print("string1:", string1)
+print("string2:", string2)
+print("string3:", string3)
+print("\n")
+
+concat = string1 + " " + string2
+print("Concatenated String:", concat)
+
+repeated = string1 * 3
+print("Repeated String:", repeated)
+
+print("First character of string1:", string1[0])
+print("Last character of string1:", string1[-1])
+print("Slice of string3 (7 to 13):", string3[7:14])
+
+print("Length of string1:", len(string1))
+
+# Case Conversion
+print("Uppercase:", string1.upper())
+print("Lowercase:", string1.lower())
+print("Title Case:", string3.strip().title())
+
+# Whitespace stripping
+print("String with stripped whitespaces:", string3.strip())
+print("\n")
+
+replaced = string3.replace("Python", "Java")
+print("String after replacement:", replaced)
+print("\n")
+
+print("Does 'Rolex' exist in string3?", "Python" in string3)
+print("Does 'Agent' exist in string3?", "Java" in string3)
+
+# Finding Substrings
+print("Index of 'Snax' in concatenated:", concat.find("World"))
+print("Index of 'Legend' in string3:", string3.find("Python"))
+
+reversed_string = string1[::-1]
+print("Reversed String1:", reversed_string)

@@ -1,0 +1,48 @@
+#Object Oriented Program(expi_7)
+
+
+
+
+# Base class
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model} engine started.")
+
+    def stop_engine(self):
+        print(f"{self.brand} {self.model} engine stopped.")
+
+    def car_info(self):
+        return f"{self.year} {self.brand} {self.model}"
+
+
+# Derived class (inheritance)
+class ElectricCar(Car):
+    def __init__(self, brand, model, year, battery_capacity):
+        super().__init__(brand, model, year)  # Call base class constructor
+        self.battery_capacity = battery_capacity  # Additional attribute
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model} is silent... (Electric engine started)")
+
+    def battery_info(self):
+        print(f"Battery capacity: {self.battery_capacity} kWh")
+
+
+# Creating objects
+my_car = Car("Toyota", "Corolla", 2020)
+my_electric_car = ElectricCar("Tesla", "Model 3", 2023, 75)
+
+# Using methods
+print(my_car.car_info())
+my_car.start_engine()
+my_car.stop_engine()
+
+print("\n--- Electric Car ---")
+print(my_electric_car.car_info())
+my_electric_car.start_engine()
+my_electric_car.battery_info()

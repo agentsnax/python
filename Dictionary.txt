@@ -1,0 +1,44 @@
+days = {
+    "Mon": "Monday",
+    "Tue": "Tuesday",
+    "Wed": "Wednesday",
+    "Thu": "Thursday",
+    "Fri": "Friday",
+    "Sat": "Saturday",
+    "Sun": "Sunday"
+}
+
+# 1. Print the entire dictionary
+print("Days dictionary:", days)
+
+# 2. Access a value by key
+print("Full name for 'Wed':", days["Wed"])
+
+# 3. Add a new key-value pair
+days["Funday"] = "Fun Day"
+print("After adding 'Funday':", days)
+
+# 4. Update an existing value
+days["Mon"] = "First Day of Week"
+print("After updating 'Mon':", days)
+
+# 5. Delete a key-value pair
+del days["Funday"]
+print("After deleting 'Funday':", days)
+
+# 6. Get all keys
+print("All short names:", list(days.keys()))
+
+# 7. Get all values
+print("All full day names:", list(days.values()))
+
+# 8. Loop through the dictionary
+print("Days of the week:")
+for short, full in days.items():
+    print(f"{short} → {full}")
+
+# 9. Check if a key exists
+print("Is 'Sun' in days?", "Sun" in days)
+
+# 10. Get value with get() (avoids error if key not found)
+print("Trying to get 'Holiday':", days.get("Holiday", "Not found"))

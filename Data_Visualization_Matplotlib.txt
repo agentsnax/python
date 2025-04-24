@@ -1,0 +1,49 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([10, 15, 20, 25, 30])
+
+plt.plot(x, y, marker='o', linestyle='--', color='r', label="Growth")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Line Plot Example")
+plt.legend()
+plt.show()
+
+
+***********************************************
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([10, 15, 20, 25, 30])
+
+plt.plot(x, y, marker='o', linestyle='--', color='r', label="Growth")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Line Plot Example")
+plt.legend()
+plt.show()
+
+*********************************************
+
+data = np.random.randn(1000)  # Generating 1000 random values
+
+plt.hist(data, bins=30, color='purple', edgecolor='black')
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.title("Histogram Example")
+plt.show()
+
+************************************************
+
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+plt.scatter(x, y, color='blue')
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Scatter Plot Example")
+plt.show()

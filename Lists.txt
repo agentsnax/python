@@ -1,0 +1,41 @@
+subjects = ["Math", "Physics", "Chemistry", "Biology", "English"]
+
+
+# 1. Print the list
+print("Subjects:", subjects)
+
+# 2. Access an item by index
+print("Subject at index 1:", subjects[1])
+
+# 3. Add a new subject to the end
+subjects.append("Computer Science")
+print("After append:", subjects)
+
+# 4. Insert a subject at a specific index
+subjects.insert(2, "History")
+print("After insert at index 2:", subjects)
+
+# 5. Remove a subject by value
+subjects.remove("Math")
+print("After removing 'Math':", subjects)
+
+# 6. Pop an item (removes last by default)
+popped = subjects.pop()
+print("Popped subject:", popped)
+print("After popping:", subjects)
+
+# 7. Sort the list alphabetically
+subjects.sort()
+print("Sorted subjects:", subjects)
+
+# 8. Reverse the list
+subjects.reverse()
+print("Reversed subjects:", subjects)
+
+# 9. Get the length of the list
+print("Number of subjects:", len(subjects))
+
+# 10. Loop through the list
+print("Subjects one by one:")
+for subject in subjects:
+    print("-", subject)

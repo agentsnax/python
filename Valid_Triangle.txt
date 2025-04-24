@@ -1,0 +1,12 @@
+# Lambda function to check if the triangle is valid
+is_valid_triangle = lambda a, b, c: a + b > c and b + c > a and c + a > b
+
+# Example usage
+a = int(input("Enter side a: "))
+b = int(input("Enter side b: "))
+c = int(input("Enter side c: "))
+
+if is_valid_triangle(a, b, c):
+    print("The triangle is valid.")
+else:
+    print("The triangle is not valid.")

@@ -1,0 +1,26 @@
+set1 = {"aple", "mango", "orange", "grapes", "banana"}
+set2 = {"lambo", "audi", "fortuner", "suzuki", "wagonR", "banana"}
+EmptySet = {}
+
+print("Set1 :" , set1)
+print("Set2 :" , set2)
+print("Empty Set :" , EmptySet)
+
+set1.add("kiwi")
+print("After adding new fruit to set1 :",set1)
+set2.remove("suzuki")
+print("After removing element from set2 :",set2)
+
+temp = set1.copy()
+temp.clear()
+print("After clearing temp_set:", temp)
+
+union_set = set1.union(set2)
+print("Union of set1 and set2:", union_set)
+
+intersection_set = set1.intersection(set2)
+print("Intersection of set1 and set2:", intersection_set)
+
+copied_set = set1.copy()
+print("Copied set1:", copied_set)
+

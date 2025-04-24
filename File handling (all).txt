@@ -1,0 +1,118 @@
+#File handling(all)
+import os
+import csv
+import json
+
+# File name
+file_name = "sample.txt"
+
+# 1️⃣ Writing to a File
+with open(file_name, "w") as file:
+    file.write("Hello, World!\n")
+    file.write("Welcome to Python file handling.\n")
+
+print(f" File '{file_name}' created and written successfully.")
+
+**************************************
+
+# 2️⃣ Reading from a File
+with open(file_name, "r") as file:
+    content = file.read()
+    print("\nReading File Content:")
+    print(content)
+**************************************
+
+# 3️⃣ Appending to a File
+with open(file_name, "a") as file:
+    file.write("This is an appended line.\n")
+
+print(f"Content appended to '{file_name}'.")
+
+**************************************
+
+# 4️⃣ Reading Line by Line
+with open(file_name, "r") as file:
+    print("\nReading File Line by Line:")
+    for line in file:
+        print(line.strip())
+
+****************************************
+
+# 5️⃣ Checking If File Exists
+if os.path.exists(file_name):
+    print(f"\nFile '{file_name}' exists.")
+else:
+    print(f"File '{file_name}' not found!")
+
+***************************************
+
+# 6️⃣ Working with CSV Files
+csv_file = "data.csv"
+
+# Writing CSV File
+with open(csv_file, "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "City"])
+    writer.writerow(["Alice", 25, "New York"])
+    writer.writerow(["Bob", 30, "London"])
+
+print(f"CSV file '{csv_file}' created.")
+
+# Reading CSV File
+print("\nReading CSV File:")
+with open(csv_file, "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+*********************************************
+
+# 7️⃣ Working with JSON Files
+json_file = "data.json"
+data = {"name": "Alice", "age": 25, "city": "New York"}
+
+# Writing JSON File
+with open(json_file, "w") as file:
+    json.dump(data, file)
+
+print(f"\nJSON file '{json_file}' created.")
+
+# Reading JSON File
+with open(json_file, "r") as file:
+    json_data = json.load(file)
+    print("\nReading JSON File:")
+    print(json_data)
+
+***********************************************
+
+# 8️⃣ Deleting the File
+delete_choice = input("\nDo you want to delete the text file? (yes/no): ").strip().lower()
+if delete_choice == "yes" and os.path.exists(file_name):
+    os.remove(file_name)
+    print(f"File '{file_name}' deleted.")
+else:
+    print("File not deleted.")
+
+**********************************************
+
+try:
+    # Attempt to open and read a file
+    with open("example.txt", "r") as file:
+        content = file.read()
+        print("File Content:\n", content)
+
+except FileNotFoundError:
+    print("Error: The file does not exist.")
+
+except PermissionError:
+    print("Error: You do not have permission to access this file.")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+finally:
+    print("File handling operation completed.")
+
+
+
+

@@ -1,0 +1,140 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def submit_form():
+    """Handles form submission and displays user data."""
+    name = entry_name.get()
+    age = entry_age.get()
+    email = entry_email.get()
+    gender = gender_var.get()
+    interests = []
+
+    if var_sports.get():
+        interests.append("Sports")
+    if var_music.get():
+        interests.append("Music")
+    if var_reading.get():
+        interests.append("Reading")
+
+    selected_course = listbox.get(listbox.curselection()) if listbox.curselection() else "None"
+    address = text_address.get("1.0", tk.END).strip()
+
+    profile_info = (
+        f"Name: {name}\nAge: {age}\nEmail: {email}\nGender: {gender}\n"
+        f"Interests: {', '.join(interests)}\nCourse: {selected_course}\nAddress: {address}"
+    )
+
+    messagebox.showinfo("Student Profile", profile_info)
+def clear_form():
+    """Clears all fields."""
+    entry_name.delete(0, tk.END)
+    entry_age.delete(0, tk.END)
+    entry_email.delete(0, tk.END)
+    gender_var.set("Male")
+    var_sports.set(False)
+    var_music.set(False)
+    var_reading.set(False)
+    listbox.selection_clear(0, tk.END)
+    text_address.delete("1.0", tk.END)
+
+def exit_app():
+    """Asks for confirmation before exiting."""
+    if messagebox.askyesno("Exit", "Are you sure you want to exit?"):
+        root.destroy()  # Closes the application
+
+# Create the main window
+root = tk.Tk()
+root.title("Student Profile Form")
+root.geometry("400x500")
+
+# Labels and Entry Fields
+tk.Label(root, text="Full Name:", font=("Arial", 12)).grid(row=0, column=0, sticky="w", padx=10, pady=5)
+entry_name = tk.Entry(root, width=30)
+entry_name.grid(row=0, column=1, padx=10, pady=5)
+
+tk.Label(root, text="Age:", font=("Arial", 12)).grid(row=1, column=0, sticky="w", padx=10, pady=5)
+entry_age = tk.Entry(root, width=30)
+entry_age.grid(row=1, column=1, padx=10, pady=5)
+
+tk.Label(root, text="Email:", font=("Arial", 12)).grid(row=2, column=0, sticky="w", padx=10, pady=5)
+entry_email = tk.Entry(root, width=30)
+entry_email.grid(row=2, column=1, padx=10, pady=5)
+
+# Gender (Radio Buttons)
+tk.Label(root, text="Gender:", font=("Arial", 12)).grid(row=3, column=0, sticky="w", padx=10, pady=5)
+gender_var = tk.StringVar(value="Male")
+
+tk.Radiobutton(root, text="Male", variable=gender_var, value="Male").grid(row=3, column=1, sticky="w")
+tk.Radiobutton(root, text="Female", variable=gender_var, value="Female").grid(row=4, column=1, sticky="w")
+tk.Radiobutton(root, text="Other", variable=gender_var, value="Other").grid(row=5, column=1, sticky="w")
+
+
+# Interests (Checkbuttons)
+tk.Label(root, text="Interests:", font=("Arial", 12)).grid(row=6, column=0, sticky="w", padx=10, pady=5)
+var_sports = tk.BooleanVar()
+var_music = tk.BooleanVar()
+var_reading = tk.BooleanVar()
+
+tk.Checkbutton(root, text="Sports", variable=var_sports).grid(row=6, column=1, sticky="w")
+tk.Checkbutton(root, text="Music", variable=var_music).grid(row=7, column=1, sticky="w")
+tk.Checkbutton(root, text="Reading", variable=var_reading).grid(row=8, column=1, sticky="w")
+
+# Course Selection (Listbox)
+tk.Label(root, text="Select Course:", font=("Arial", 12)).grid(row=9, column=0, sticky="w", padx=10, pady=5)
+listbox = tk.Listbox(root, height=4)
+courses = ["Computer Science", "Mathematics", "Physics", "English"]
+for course in courses:
+    listbox.insert(tk.END, course)
+listbox.grid(row=9, column=1, padx=10, pady=5)
+
+# Address (Text Box)
+tk.Label(root, text="Address:", font=("Arial", 12)).grid(row=10, column=0, sticky="w", padx=10, pady=5)
+text_address = tk.Text(root, height=3, width=30)
+text_address.grid(row=10, column=1, padx=10, pady=5)
+
+# Buttons (Submit, Clear, Exit) - All in the same row
+button_frame = tk.Frame(root)
+button_frame.grid(row=11, column=0, columnspan=2, pady=10)
+
+tk.Button(button_frame, text="Submit", command=submit_form, bg="green", fg="white", width=10).grid(row=0, column=0, padx=5)
+tk.Button(button_frame, text="Clear", command=clear_form, bg="red", fg="white", width=10).grid(row=0, column=1, padx=5)
+tk.Button(button_frame, text="Exit", command=exit_app, bg="gray", fg="white", width=10).grid(row=0, column=2, padx=5)
+
+# Start the GUI loop
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

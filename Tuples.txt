@@ -1,0 +1,36 @@
+subjects = ("Math", "Physics", "Chemistry", "Biology", "English")
+
+# 1. Print the tuple
+print("Subjects tuple:", subjects)
+
+# 2. Access an element by index
+print("Subject at index 2:", subjects[2])
+
+# 3. Slicing the tuple
+print("First three subjects:", subjects[:3])
+
+# 4. Length of the tuple
+print("Number of subjects:", len(subjects))
+
+# 5. Check if a subject exists
+print("Is 'English' in subjects?", "English" in subjects)
+
+# 6. Count how many times an item appears
+print("Count of 'Math':", subjects.count("Math"))
+
+# 7. Get the index of a subject
+print("Index of 'Biology':", subjects.index("Biology"))
+
+# 8. Loop through the tuple
+print("All subjects:")
+for subject in subjects:
+    print("-", subject)
+
+# 9. Concatenate with another tuple
+more_subjects = ("Computer Science", "History")
+all_subjects = subjects + more_subjects
+print("All subjects after concatenation:", all_subjects)
+
+# 10. Repeat the tuple
+repeated_subjects = subjects * 2
+print("Repeated subjects tuple:", repeated_subjects)
